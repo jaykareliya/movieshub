@@ -456,7 +456,7 @@ ORDER BY  movie.Movie_Name asc limit 0,3";
 
 	public function most_comment_count()
 	{
-		$Q = $this->db->query("SELECT count(*) as cnt FROM Movie");
+		$Q = $this->db->query("SELECT count(*) as cnt FROM movie");
 
 			
   		$cnt="";
