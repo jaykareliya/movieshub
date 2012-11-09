@@ -78,7 +78,7 @@ $('#txtSearch').autocomplete(data,{
 			      		<div class="pull-right">
 			      			<div class="row-fluid">
 			      				<div class="span12"><p class="navbar-text pull-right" style="display:<?=$display?>"><a href="<?=base_url()?>index.php/user/register" class="text-info">Register</a>|<a href="<?=base_url()?>index.php/user/login" class="text-info" onclick="">Login</a></p>
-			           <p class="navbar-text pull-right" style="display:<?=$display1?>"><a href="".base_url()."index.php/user/user_details/".$id." " class="text-info"><span class="muted"><?php echo  strtoupper($user); ?></span></a> | <a href="<?=base_url()?>index.php/user/changepasswordview" class="text-info">changepassword</a> | <a href="<?=base_url()?>index.php/user/logout" class="text-error" onclick="">Log Out</a> </p></div>
+			           <p class="navbar-text pull-right" style="display:<?=$display1?>"><a href="<?=base_url()?>index.php/user/user_details/<?=$id?>" class="text-info"><span class="muted"><?php echo  strtoupper($user); ?></span></a> | <a href="<?=base_url()?>index.php/user/changepasswordview" class="text-info">changepassword</a> | <a href="<?=base_url()?>index.php/user/logout" class="text-error" onclick="">Log Out</a> </p></div>
 			      			</div>
 			      			<div class="row-fluid">
 			      				<div class="span12">
