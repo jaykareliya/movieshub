@@ -386,7 +386,7 @@ class User extends CI_Controller {
 		$this->data["mostcomment_count"]=$this->movie->most_comment_count();
 		$this->data["home_seeall_count"]=$this->user->home_seeall_count();
 		$this->data["actor_birthday"]=$this->actor->get_actor_birthday();
-			$this->data['message']= $this->ion_auth->errors();
+		$this->data['message']= $this->ion_auth->errors();
 
 			$this->load->view('login', $this->data);
 		}	
