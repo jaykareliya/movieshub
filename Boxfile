@@ -3,6 +3,11 @@ web1: #component type & number
   shared_writable_dirs: 
       - application/cache
       - application/logs
+      - /images/User
+      - /images/User/large
+      - /images/User/medium
+      - /images/User/small
+
   php_version: 5.3.8
   php_extensions:
     - eaccelerator

@@ -4,7 +4,7 @@ class Mchoreographer extends CI_Model
 {
 	public function get_choreographer($movie_id)
 	{
-		$query ="SELECT c.Choreographer_Name,c.Choreographer_Id FROM movie_choreographer AS mc LEFT JOIN choreographer AS c ON (mc.choreographer_id = c.choreographer_id) LEFT JOIN movie AS m ON (m.movie_id = mc.movie_id) WHERE m.movie_id =".$movie_id;
+		$query ="SELECT c.Choreographer_Name,c.Choreographer_Id FROM movie_choreographer AS mc LEFT JOIN choreographer AS c ON (mc.Choreographer_Id = c.Choreographer_Id) LEFT JOIN movie AS m ON (m.Movie_Id = mc.movie_id) WHERE m.movie_id =".$movie_id;
 		$q = $this->db->query($query);
 
 		return $q->result();
@@ -15,7 +15,7 @@ class Mchoreographer extends CI_Model
 	
 	public function get_choreographer_detail($choreographer_id)
 	{
-		$query="SELECT * FROM choreographer WHERE choreographer_id =".$choreographer_id;
+		$query="SELECT * FROM choreographer WHERE Choreographer_Id =".$choreographer_id;
 		$q =$this->db->query($query);
 		
 		return $q->result();
@@ -42,7 +42,7 @@ group by m.Movie_Id,m.Movie_Name,m.Movie_Image,m.Movie_Rating
 	public function choreographer_count()
 	{
 		$choreographer_id=$this->uri->segment(3);
-		$Q = $this->db->query("SELECT count(*) as cnt FROM movie_choreographer AS mc LEFT JOIN choreographer AS c ON (mc.choreographer_id = c.choreographer_id) LEFT JOIN movie AS m ON (m.movie_id = mc.movie_id) WHERE c.choreographer_id =".$choreographer_id);
+		$Q = $this->db->query("SELECT count(*) as cnt FROM movie_choreographer AS mc LEFT JOIN choreographer AS c ON (mc.Choreographer_Id = c.Choreographer_Id) LEFT JOIN movie AS m ON (m.movie_id = mc.movie_id) WHERE c.Choreographer_Id =".$choreographer_id);
 
 			
   		$cnt="";
