@@ -43,9 +43,9 @@ CONCAT
 DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), Singer_DOB)), '%Y')+0,
 CONCAT
 (DATE_FORMAT(Singer_DOB ,'%Y') ,' - ',DATE_FORMAT(Singer_Death_Date ,'%Y'))) AS age,Singer_Name as Name,Concat('http://www.moviehub.com/images/singer/small/',Singer_Avatar) as Avatar,Concat('http://www.moviehub.com/index.php/singer/Singer_name/',Singer_Id) as page_link FROM `singer`WHERE DATE_FORMAT( Singer_dob, '%d/%m' ) = DATE_FORMAT( now( ) , '%d/%m' ) ";
-		$q =$this->db->query($query);
+		//$q =$this->db->query($query);
 		
-		return $q->result();
+		//return $q->result();
 	}
 
 
