@@ -34,11 +34,11 @@ CONCAT
 		SELECT Director_Id as Id,Director_DOB as DOB,if(DATE_FORMAT(Director_Death_Date , '%d/%m/%Y') = '00/00/0000',
 DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), Director_DOB)), '%Y')+0,
 CONCAT
-<<<<<<< HEAD
+
 (DATE_FORMAT(Director_DOB ,'%Y') ,' - ',DATE_FORMAT(Director_Death_Date ,'%Y')))AS age,Director_Name as Name,Concat('http://www.moviehub.com/images/director/small/',Director_Avatar) as Avatar,Concat('http://www.moviehub.com/index.php/director/director_name/',Director_id) as page_link FROM `director`WHERE DATE_FORMAT( Director_dob, '%d/%m' ) = DATE_FORMAT( now( ) , '%d/%m' )union 
-=======
+
 (DATE_FORMAT(Director_DOB ,'%Y') ,' - ',DATE_FORMAT(Director_Death_Date ,'%Y')))AS age,Director_Name as Name,Concat('http://www.moviehub.com/images/director/small/',Director_Avatar) as Avatar,Concat('http://www.moviehub.com/index.php/director/director_name/',Director_Id) as page_link FROM `director`WHERE DATE_FORMAT( Director_dob, '%d/%m' ) = DATE_FORMAT( now( ) , '%d/%m' )union 
->>>>>>> change in mactor
+ change in mactor
 		
 		SELECT Producer_Id as Id,Producer_DOB as DOB,if(DATE_FORMAT(Producer_Death_Date , '%d/%m/%Y') = '00/00/0000',
 DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), Producer_DOB)), '%Y')+0,
