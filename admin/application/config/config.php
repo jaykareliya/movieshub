@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://www.moviehub.com/admin/';
+$config['base_url']	= 'http://movieshub12.pagodabox.com/admin/';
 
 /*
 |--------------------------------------------------------------------------
