@@ -1,0 +1,19 @@
+web1: #component type & number
+  name: hub1            #component settings
+  shared_writable_dirs: 
+      - application/cache
+      - application/logs
+  php_version: 5.3.8
+  php_extensions:
+    - eaccelerator
+    - mysql
+    - mysqli
+     
+db1: #component type & number 
+  name: hubdb            #component settings
+  type: mysql
+
+global:
+  env:
+    - APP_NAME: moviehub
+    - ENVIRONMENT: pagoda
