@@ -7,7 +7,7 @@ class Msinger extends CI_Model
 	public function get_singer($movie_id)
 	{
 
-		$query="SELECT s.Singer_Name, s.Singer_Id  FROM `movie` m LEFT JOIN movie_singer ms ON ( ms.movie_id = m.movie_id ) LEFT JOIN Singer  s ON ( ms.singer_id = s.singer_id ) WHERE m.movie_id =  ".$movie_id;
+		$query="SELECT s.Singer_Name, s.Singer_Id  FROM `movie` m LEFT JOIN movie_singer ms ON ( ms.Movie_Id = m.Movie_Id ) LEFT JOIN singer  s ON ( ms.Singer_Id = s.Singer_Id ) WHERE m.Movie_Id =  ".$movie_id;
 		$q= $this->db->query($query);
 
 		return $q->result();
@@ -18,7 +18,7 @@ class Msinger extends CI_Model
 
 	public function get_singer_detail($singer_id)
 	{
-		$query="SELECT * FROM singer WHERE singer_id =".$singer_id;
+		$query="SELECT * FROM singer WHERE Singer_Id =".$singer_id;
 		$q =$this->db->query($query);
 		
 		return $q->result();
@@ -27,9 +27,9 @@ class Msinger extends CI_Model
 
 	public function singer_see_all($singer_id,$start_row,$limit)
 	{
-		$query="SELECT count( movie_comment.movie_comment_id ) AS cnt,m.Movie_Id,m.Movie_Name,m.Movie_Image,m.Movie_Rating FROM movie_singer AS ms LEFT JOIN movie AS m ON(m.movie_id = ms.movie_id) 
-LEFT JOIN `movie_comment` ON ( m.movie_id = movie_comment.movie_id )
-		WHERE ms.singer_id=".$singer_id." 
+		$query="SELECT count( movie_comment.Movie_Comment_Id ) AS cnt,m.Movie_Id,m.Movie_Name,m.Movie_Image,m.Movie_Rating FROM movie_singer AS ms LEFT JOIN movie AS m ON(m.Movie_Id = ms.Movie_Id) 
+LEFT JOIN `movie_comment` ON ( m.Movie_Id = movie_comment.Movie_Id )
+		WHERE ms.Singer_Id=".$singer_id." 
 group by m.Movie_Id,m.Movie_Name,m.Movie_Image,m.Movie_Rating
 		limit ".$start_row." ,".$limit;
 		$q =$this->db->query($query);
@@ -40,7 +40,7 @@ group by m.Movie_Id,m.Movie_Name,m.Movie_Image,m.Movie_Rating
 
 	public function singer_count($singer_id)
 	{
-		$Q = $this->db->query("SELECT count(*) as cnt FROM `movie` m LEFT JOIN movie_singer ms ON ( ms.movie_id = m.movie_id ) LEFT JOIN Singer  s ON ( ms.singer_id = s.singer_id ) WHERE s.singer_id = " .$singer_id);
+		$Q = $this->db->query("SELECT count(*) as cnt FROM `movie` m LEFT JOIN movie_singer ms ON ( ms.Movie_Id = m.Movie_Id ) LEFT JOIN singer  s ON ( ms.Singer_Id = s.Singer_Id ) WHERE s.Singer_Id = " .$singer_id);
 
 			
   		$cnt="";
