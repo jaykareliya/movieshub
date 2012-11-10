@@ -27,7 +27,7 @@ $config['base_url']	= 'http://movieshub12.pagodabox.com/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
